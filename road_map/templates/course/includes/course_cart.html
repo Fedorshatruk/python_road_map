@@ -1,11 +1,11 @@
-<div class="card col w-50 p-1">
+<div class="card col w-50 p-1 mb-1">
     {% if obj.image %}
         <img src="{{ obj.image.url }}" class="card-img-top w-25" alt="...">
     {% endif %}
     <div class="card-body">
         <h5 class="card-title">№{{ order_num }} {{ obj.name }}</h5>
         {% if obj.description %}
-            <div class="accordion" id="accordionExample{{ obj.id }}">
+            <div class="accordion mb-2" id="accordionExample{{ obj.id }}">
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="headingOne{{ obj.id }}">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
