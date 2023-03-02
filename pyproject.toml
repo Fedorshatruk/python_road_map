@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "python-road-map"
+version = "0.1.0"
+description = ""
+authors = ["fedor <f.shatruk@thesis.team>"]
+readme = "README.md"
+packages = [{include = "python_road_map"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+django = "^4.1.7"
+django-cleanup = "^7.0.0"
+pillow = "^9.4.0"
+sorl-thumbnail = "^12.9.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

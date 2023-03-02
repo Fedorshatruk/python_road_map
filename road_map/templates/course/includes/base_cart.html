@@ -1,0 +1,13 @@
+
+<div class="card w-25 p-1 m-2">
+    {% if obj.image %}
+        <img src="{{ obj.image.url }}" class="card-img-top" alt="...">
+    {% endif %}
+    <div class="card-body">
+        <h5 class="card-title">{{ obj.name }}</h5>
+        {% if obj.description %}
+            <p class="card-text">{{ obj.description }}</p>
+        {% endif %}
+        {% block detail_link %}{% endblock %}
+    </div>
+</div>

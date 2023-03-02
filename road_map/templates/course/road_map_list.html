@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="container">
+        <h1>Доступные дорожные карты:</h1>
+        {% for obj in object_list %}
+            {% include 'course/includes/roadmap_cart.html' with obj=obj %}
+        {% endfor %}
+    </div>
+{% endblock %}

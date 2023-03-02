@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="container">
+        <h1>Курсы:</h1>
+        {% for obj in object.order_course.all %}
+            {% include 'course/includes/course_cart.html' with obj=obj.course %}
+        {% endfor %}
+    </div>
+{% endblock %}

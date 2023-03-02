@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>
+        {% block title %}{% endblock %}
+    </title>
+    {% block base_script %}
+    <script src="{% static 'js/bootstrap.js' %}"></script>
+    <script src="{% static 'js/bootstrap.bundle.js' %}"></script>
+    <script src="{% static 'js/bootstrap.esm.js' %}"></script>
+    {% endblock %}
+    {% block extra_script %}{% endblock %}
+    {% block base_style %}
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap-utilities.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap-reboot.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap-grid.css' %}">
+    {% endblock %}
+    {% block extra_style %}{% endblock %}
+</head>
+<body>
+{% block nav_bar %}{% endblock %}
+{% block content %}{% endblock %}
+{% block footer %}{% endblock %}
+</body>
+</html>

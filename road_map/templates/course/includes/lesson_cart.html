@@ -1,0 +1,46 @@
+<div class="accordion-item">
+    <h2 class="accordion-header" id="heading{{ obj.id }}">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{ obj.id }}"
+                aria-expanded="true" aria-controls="collapse{{ obj.id }}">
+            №{{ obj.order_num }} {{ obj.name }}
+        </button>
+    </h2>
+    <div id="collapse{{ obj.id }}" class="accordion-collapse collapse" aria-labelledby="heading{{ obj.id }}"
+         data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+            <div class="collapse" id="collapse{{ obj.id }}">
+                <div class="container">
+                    {% if obj.methodical_url %}
+                        <h6><a href="{{ obj.methodical_url }}" target="_blank">Методические матерьялы</a></h6>
+                    {% endif %}
+                    {% if obj.video_url %}
+                        <h6><a href="{{ obj.video_url }}" target="_blank">смотреть видео</a></h6>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{#<div class="card w-25 p-1 m-2">#}
+{#    <div class="card-body">#}
+{#        <h5 class="card-title">Урок №{{ obj.order_num }}<br/>{{ obj.name }}</h5>#}
+{#        <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseLesson_{{ obj.id }}"#}
+{#                aria-expanded="false" aria-controls="collapseLesson_{{ obj.id }}">#}
+{#            развернуть#}
+{#        </button>#}
+{#        <div class="collapse" id="collapseLesson_{{ obj.id }}">#}
+{#            <div class="card card-body">#}
+{#                <div class="container">#}
+{#                    {% if obj.methodical_url %}#}
+{#                        <h6><a href="{{ obj.methodical_url }}">Методические матерьялы</a></h6>#}
+{#                    {% endif %}#}
+{#                    {% if obj.video_url %}#}
+{#                        <h6><a href="{{ obj.video_url }}">смотреть видео</a></h6>#}
+{#                    {% endif %}#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+{#</div>#}
