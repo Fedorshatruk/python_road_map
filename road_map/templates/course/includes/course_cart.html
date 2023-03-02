@@ -3,7 +3,7 @@
         <img src="{{ obj.image.url }}" class="card-img-top w-25" alt="...">
     {% endif %}
     <div class="card-body">
-        <h5 class="card-title">{{ obj.name }}</h5>
+        <h5 class="card-title">№{{ order_num }} {{ obj.name }}</h5>
         {% if obj.description %}
             <div class="accordion" id="accordionExample{{ obj.id }}">
                 <div class="accordion-item">

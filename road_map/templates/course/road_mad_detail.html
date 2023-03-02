@@ -4,7 +4,7 @@
         <h1>Курсы:</h1>
         <div class="row row-cols-2">
         {% for obj in object.order_course.all %}
-            {% include 'course/includes/course_cart.html' with obj=obj.course %}
+            {% include 'course/includes/course_cart.html' with obj=obj.course order_num=obj.order_num %}
         {% endfor %}
         </div>
     </div>
