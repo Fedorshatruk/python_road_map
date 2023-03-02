@@ -3,7 +3,7 @@ from django.shortcuts import redirect
 from django.urls import reverse
 from django.views.generic import ListView, DetailView
 
-from course.models import RoadMap, OrderRoadMapCourse, Course
+from course.models import RoadMap, OrderRoadMapCourse, Course, Lesson
 
 
 class RoadMapView(ListView):
@@ -35,4 +35,9 @@ class CourseDetailView(DetailView):
     model = Course
 
     def get_queryset(self):
-        return super().get_queryset().prefetch_related('lessons')
+        return super().get_queryset().prefetch_related(
+            Prefetch(
+                'lessons',
+                queryset=Lesson.objects.prefetch_related('links')
+            )
+        )

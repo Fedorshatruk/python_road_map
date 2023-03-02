@@ -1,7 +1,12 @@
 from django.contrib import admin
 from django.db.models import F
 
-from course.models import Lesson
+from course.models import Lesson, LessonLink
+
+
+class LessonLinkInline(admin.StackedInline):
+    model = LessonLink
+    extra = 0
 
 
 @admin.register(Lesson)
@@ -14,6 +19,7 @@ class LessonAdmin(admin.ModelAdmin):
     list_filter = (
         'course',
     )
+    inlines = [LessonLinkInline]
 
     def get_queryset(self, request):
         return super().get_queryset(request).annotate(course_name=F('course__name'))

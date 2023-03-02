@@ -1,3 +1,4 @@
+from ckeditor.fields import RichTextField
 from django.core.validators import MinValueValidator
 from django.db import models
 from sorl.thumbnail import ImageField
@@ -8,7 +9,7 @@ class RoadMap(models.Model):
         verbose_name='имя дорожной карты',
         max_length=150,
     )
-    description = models.TextField(
+    description = RichTextField(
         verbose_name='описание',
         blank=True,
         null=True,

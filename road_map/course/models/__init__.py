@@ -1,6 +1,7 @@
 from .course import Course
 from .lesson import Lesson
 from .roadmap import OrderRoadMapCourse, RoadMap
+from .link import LessonLink
 
 
 __all__ = (
@@ -8,4 +9,5 @@ __all__ = (
     'Lesson',
     'OrderRoadMapCourse',
     'RoadMap',
+    'LessonLink',
 )

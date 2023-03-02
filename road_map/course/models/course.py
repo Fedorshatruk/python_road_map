@@ -1,3 +1,4 @@
+from ckeditor.fields import RichTextField
 from django.db import models
 from sorl.thumbnail import ImageField
 
@@ -13,7 +14,7 @@ class Course(models.Model):
         upload_to='course',
         help_text='Добавьте фото',
     )
-    description = models.TextField(
+    description = RichTextField(
         verbose_name='описание'
     )
 

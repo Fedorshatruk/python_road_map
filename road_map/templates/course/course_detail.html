@@ -1,13 +1,16 @@
 {% extends 'base.html' %}
+{% block navbar %}
+    {% include 'course/includes/course_nav.html' %}
+{% endblock %}
 {% block content %}
     <div class="container">
         <h1>{{ object.name }}</h1>
         <h2>Уроки:</h2>
         <div class="row">
             <div class="accordion" id="accordionExample">
-            {% for obj in object.lessons.all %}
-                {% include 'course/includes/lesson_cart.html' with obj=obj %}
-            {% endfor %}
+                {% for obj in object.lessons.all %}
+                    {% include 'course/includes/lesson_cart.html' with obj=obj %}
+                {% endfor %}
             </div>
         </div>
     </div>

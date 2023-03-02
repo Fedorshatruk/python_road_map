@@ -1,4 +1,27 @@
-{% extends 'course/includes/base_cart.html' %}
-{% block detail_link %}
-    <a href="{% url 'course:course_detail' pk=obj.pk %}" class="btn btn-primary">перейти</a>
-{% endblock %}
+<div class="card col w-50 p-1">
+    {% if obj.image %}
+        <img src="{{ obj.image.url }}" class="card-img-top w-25" alt="...">
+    {% endif %}
+    <div class="card-body">
+        <h5 class="card-title">{{ obj.name }}</h5>
+        {% if obj.description %}
+            <div class="accordion" id="accordionExample{{ obj.id }}">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingOne{{ obj.id }}">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseOne{{ obj.id }}" aria-expanded="false" aria-controls="collapseOne{{ obj.id }}">
+                            Описание
+                        </button>
+                    </h2>
+                    <div id="collapseOne{{ obj.id }}" class="accordion-collapse collapse" aria-labelledby="headingOne{{ obj.id }}"
+                         data-bs-parent="#accordionExample{{ obj.id }}">
+                        <div class="accordion-body">
+                            {{ obj.description|safe }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+        <a href="{% url 'course:course_detail' pk=obj.pk %}" class="btn btn-primary">перейти</a>
+    </div>
+</div>

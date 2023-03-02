@@ -1,6 +1,6 @@
 <div class="accordion-item">
     <h2 class="accordion-header" id="heading{{ obj.id }}">
-        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{ obj.id }}"
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{ obj.id }}"
                 aria-expanded="true" aria-controls="collapse{{ obj.id }}">
             №{{ obj.order_num }} {{ obj.name }}
         </button>
@@ -15,6 +15,12 @@
                     {% endif %}
                     {% if obj.video_url %}
                         <h6><a href="{{ obj.video_url }}" target="_blank">смотреть видео</a></h6>
+                    {% endif %}
+                    {% if obj.links_exists %}
+                        <h6>Полезные ссылки:</h6>
+                        {% for link in obj.links.all %}
+                            {% include 'course/includes/lesson_links.html' with link=link%}
+                        {% endfor %}
                     {% endif %}
                 </div>
             </div>

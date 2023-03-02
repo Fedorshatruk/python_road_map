@@ -46,3 +46,7 @@ class Lesson(models.Model):
 
     def __str__(self):
         return self.name
+
+    @property
+    def links_exists(self):
+        return self.links.exists()

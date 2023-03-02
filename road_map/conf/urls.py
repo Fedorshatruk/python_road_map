@@ -22,6 +22,7 @@ from conf import settings
 urlpatterns = [
     path("admin/", admin.site.urls),
     path('', include('course.urls', namespace="course"),),
+    path('ckeditor/', include('ckeditor_uploader.urls')),
 ]
 if settings.DEBUG:
     urlpatterns += static(
